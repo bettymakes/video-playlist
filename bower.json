@@ -1,0 +1,12 @@
+{
+  "name": "html5-video-exercise",
+  "private": true,
+  "dependencies": {
+    "bourbon": "~4",
+    "neat": "~1", 
+    "jquery": "~1.11.0",
+    "normalize-css": "~3.0.2"
+  },
+  "devDependencies": {}
+}
+

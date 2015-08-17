@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <title>html5-video-exercise</title>
+
+    <!-- build:css styles/vendor.css -->
+    <link rel="stylesheet" type="text/css" href="../bower_components/normalize-css/normalize.css">
+    
+    <!-- endbuild -->
+
+    <link rel="stylesheet" href="styles/main.css">
+
+    
+  </head>
+
+  <body>
+    <h1>My HTML5 Video Player!</h1>
+
+    <video controls>
+      <source src="http://bettymakes.com/assets/videos/w11-deploying-to-ghpages.mp4" type="video/mp4"/>      
+      <track src="captions/vid1-captions.vtt" srclang="en" kind="subtitles" label="Captions" />
+      <track src="captions/vid2-captions.vtt" srclang="fr" kind="subtitles" label="Derp" default/>
+    </video>
+
+    <video controls>
+      <source src="http://bettymakes.com/assets/videos/w11-deploying-to-ghpages.mp4" type="video/mp4"/>
+        <track src="captions/vid2-captions.vtt" srclang="en" kind="subtitles" label="Captions" default />
+    </video>
+
+    <audio controls>
+      <source src="http://bettymakes.com/assets/audio/bridge-audio.mp3" type="audio/mp3"/>
+    </audio>
+
+    <!-- build:js scripts/main.js -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>
