@@ -6,7 +6,8 @@
     "neat": "~1",
     "jquery": "~1.11.0",
     "normalize-css": "~3.0.2",
-    "bootstrap": "~3.3.5"
+    "bootstrap": "~3.3.5",
+    "lodash": "~3.10.1"
   },
   "devDependencies": {}
 }

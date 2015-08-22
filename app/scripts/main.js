@@ -1,7 +1,14 @@
 'use strict';
 
+var app = app || {};
+
 (function($) {
   $(document).ready(function() {
+
+
+    app.cool = new app.App();
+
+    app.cool.fetch();
     
     // $('.list-group-item').on('click', function(e){
     //   $('video').remove();
@@ -15,11 +22,7 @@
     //   $('.list-group').find('.active').removeClass('active');
 
     //   $(this).addClass('active');
-  
+    // });
 
-    
-
-     
-    });
   });
 })(jQuery);
