@@ -8,6 +8,8 @@ var app = app || {};
         this.$video = $('#video-container');
         this.$playlist = $('#playlist');
 
+        this.event = $({});
+
         this.data = false;
         
         this.fetch = function(){
@@ -17,8 +19,7 @@ var app = app || {};
                 url: self.url,
                 success: function(data) {
                     self.data = data.videos;
-                    self.appendListItem();
-                    self.renderFirstVideo();
+                    self.event.trigger('success');
                 }
             })
         };
@@ -39,6 +40,18 @@ var app = app || {};
             var videoHTML = template(firstVideo.video);
 
             self.$video.html(videoHTML);
+        };
+
+        this.initialize = function() {
+            var self = this;
+            this.fetch();
+
+            this.event.on('success', function() {
+                // On success, render video and playlist
+                self.renderFirstVideo();
+                self.appendListItem();
+            });
+
         };
     };
 

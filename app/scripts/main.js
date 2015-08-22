@@ -8,7 +8,7 @@ var app = app || {};
 
     app.cool = new app.App();
 
-    app.cool.fetch();
+    app.cool.initialize();
     
     // $('.list-group-item').on('click', function(e){
     //   $('video').remove();
