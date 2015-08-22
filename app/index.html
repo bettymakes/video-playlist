@@ -6,6 +6,7 @@
 
     <!-- build:css styles/vendor.css -->
     <link rel="stylesheet" type="text/css" href="../bower_components/normalize-css/normalize.css">
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
     
     <!-- endbuild -->
 
@@ -15,25 +16,58 @@
   </head>
 
   <body>
-    <h1>My HTML5 Video Player!</h1>
+    <div class="container">
+      <h1>Week 1</h1>
+      
+      <div class="video-wrapper">
+        <video controls class="panel video-player">
+          <source src="http://bettymakes.com/assets/videos/w11-deploying-to-ghpages.mp4" type="video/mp4"/>      
+          <track src="captions/vid1-captions.vtt" srclang="en" kind="subtitles" label="Captions" />
+        </video>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4>Week 1: Intro to HTML</h4>
+        </div>
 
-    <video controls>
-      <source src="http://bettymakes.com/assets/videos/w11-deploying-to-ghpages.mp4" type="video/mp4"/>      
-      <track src="captions/vid1-captions.vtt" srclang="en" kind="subtitles" label="Captions" />
-      <track src="captions/vid2-captions.vtt" srclang="fr" kind="subtitles" label="Derp" default/>
-    </video>
+        <div class="list-group">
+          <a href="#" class="list-group-item active">
+              Intro to HTML tags
 
-    <video controls>
-      <source src="http://bettymakes.com/assets/videos/w11-deploying-to-ghpages.mp4" type="video/mp4"/>
-        <track src="captions/vid2-captions.vtt" srclang="en" kind="subtitles" label="Captions" default />
-    </video>
+              <span class="badge">1:40</span>
+          </a> 
 
-    <audio controls>
-      <source src="http://bettymakes.com/assets/audio/bridge-audio.mp3" type="audio/mp3"/>
-    </audio>
+          <a href="#" class="list-group-item">
+              Basic structure of an HTML Document
+
+              <span class="badge">2:00</span>
+          </a> 
+
+          <a href="#" class="list-group-item">
+              Creating your own HTML file
+
+              <span class="badge">2:30</span>
+          </a> 
+
+          <a href="#" class="list-group-item">
+              Using Chrome's Dev Tools
+
+              <span class="badge">5:25</span>
+          </a> 
+
+          <a href="#" class="list-group-item">
+              HTML Resources
+
+              <span class="badge">1:00</span>
+          </a> 
+        </div>
+
+      </div>
+    </div> 
 
     <!-- build:js scripts/main.js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
   </body>

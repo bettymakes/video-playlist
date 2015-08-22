@@ -3,10 +3,10 @@
   "private": true,
   "dependencies": {
     "bourbon": "~4",
-    "neat": "~1", 
+    "neat": "~1",
     "jquery": "~1.11.0",
-    "normalize-css": "~3.0.2"
+    "normalize-css": "~3.0.2",
+    "bootstrap": "~3.3.5"
   },
   "devDependencies": {}
 }
-
