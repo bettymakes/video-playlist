@@ -24,11 +24,11 @@ var app = app || {};
             })
         };
 
-        this.appendListItem = function(){
+        this.appendVideoItem = function(){
             var self = this;
 
             _.forEach(self.data, function(val){
-                self.$playlist.append('<h2>' + val.title + '</h2>');
+                self.event.trigger('video:added', val);
             });
         };
 
@@ -36,10 +36,18 @@ var app = app || {};
             var self = this,
                 firstVideo = _.first(self.data);
 
-            var template = _.template($('#video-template').html());
-            var videoHTML = template(firstVideo.video);
+            var template = _.template($('#player-template').html());
+            var playerHTML = template(firstVideo.video);
 
-            self.$video.html(videoHTML);
+            self.$video.html(playerHTML);
+        };
+
+        this.addVideo = function(data){
+            var self = this;
+            var video = new app.Video(data);
+            video.render();
+
+            self.$playlist.append(video.el);
         };
 
         this.initialize = function() {
@@ -49,9 +57,12 @@ var app = app || {};
             this.event.on('success', function() {
                 // On success, render video and playlist
                 self.renderFirstVideo();
-                self.appendListItem();
+                self.appendVideoItem();
             });
 
+            this.event.on('video:added', function(event, data){
+                self.addVideo(data);
+            });
         };
     };
 

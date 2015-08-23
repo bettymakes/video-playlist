@@ -67,14 +67,24 @@
     <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="../bower_components/lodash/lodash.min.js"></script>
     <script src="scripts/app.js"></script>
+    <script src="scripts/video.js"></script>
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
 
-    <script type="text/template" id="video-template">
+    <script type="text/template" id="player-template">
       <video controls class="panel video-player">
         <source src="<%= source %>" type="<%= type %>"/>      
         <track src="<%= captions.src %>" srclang="<%= captions.srclang %>" kind="<%= captions.kind %>" label="<%= captions.label %>" />
       </video>
+    </script>
+
+    <script type="text/template" id="video-item-template">
+      <a href="#" class="list-group-item">
+        <%= title %>
+        <span class="badge">
+          <%= video.time %>
+        </span>
+      </a> 
     </script>
   </body>
 </html>
