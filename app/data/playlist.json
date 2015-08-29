@@ -1,6 +1,7 @@
 {
   "videos": [
     {
+      "id": "001",
       "title": "Intro to HTML tags",
       "video": {
         "source": "http://treehouse-code-samples.s3.amazonaws.com/html-video-and-audio/bridge.mp4",
@@ -15,6 +16,7 @@
       }
     },
     {
+      "id": "002",
       "title": "Basic Structure",
       "video": {
         "source": "http://treehouse-code-samples.s3.amazonaws.com/html-video-and-audio/bridge.mp4",
@@ -29,6 +31,7 @@
       }
     },
     {
+      "id": "003",
       "title": "Creating your own",
       "video": {
         "source": "http://treehouse-code-samples.s3.amazonaws.com/html-video-and-audio/bridge.mp4",

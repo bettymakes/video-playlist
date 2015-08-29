@@ -3,7 +3,7 @@ var app = app || {};
 (function($) {
 
     var _events = {};
-    _events = _.extend(_events, Backbone.Events);
+    _events = $(_events);
 
     app.App = function(){
         this.url = "../data/playlist.json";
@@ -68,12 +68,17 @@ var app = app || {};
            
             });
 
-            this.event.on('video:added', function(event, data){
+            this.event.on('video:added', function(event, data) {
                 self.addVideo(data);
             });
 
-            this.event.on('player:loadVideo', function(event, video){
+            this.event.on('player:loadVideo', function(event, video) {
                 self.renderVideo(video);
+            });
+
+            this.event.on('playlist:selectVideo', function(event, video) {
+                console.log('video selected', video.el);
+                video.el.addClass('active');
             });
 
         };

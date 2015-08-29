@@ -1,5 +1,5 @@
-<!doctype html>
-<html lang="fr">
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <title>html5-video-exercise</title>
@@ -11,7 +11,6 @@
     <!-- endbuild -->
 
     <link rel="stylesheet" href="styles/main.css">
-
     
   </head>
 
@@ -27,8 +26,8 @@
           <h4>Week 1: Intro to HTML</h4>
         </div>
 
-        <div id="playlist" class="list-group">
-        </div>
+        <ul id="playlist" class="list-group">
+        </ul>
 
       </div>
     </div> 
@@ -40,6 +39,7 @@
     <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="scripts/app.js"></script>
     <script src="scripts/video.js"></script>
+    <script src="scripts/playlist.js"></script>
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
 
@@ -51,12 +51,12 @@
     </script>
 
     <script type="text/template" id="video-item-template">
-      <a href="#" class="list-group-item">
+      <li class="list-group-item">
         <%= title %>
         <span class="badge">
           <%= video.time %>
         </span>
-      </a> 
+      </li> 
     </script>
   </body>
 </html>

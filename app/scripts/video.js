@@ -2,7 +2,7 @@
 
 var app = app || {};
 
-app.Video = function(data){
+app.Video = function(data) {
 
   this.event = $({});
   this.data;
@@ -11,7 +11,7 @@ app.Video = function(data){
 
 
 
-  this.render = function(){
+  this.render = function() {
     this.el = $(this.template(this.data));
 
     this.event.trigger('video:rendered');
@@ -23,11 +23,15 @@ app.Video = function(data){
     var self = this;
     this.el.on('click', function() {
       app.VideoApp.event.trigger('player:loadVideo', self);
+      app.VideoApp.event.trigger('playlist:selectVideo', self);
     });
   };
 
+  this.selectVideo = function() {
 
-  this.initialize = function(data){
+  };
+
+  this.initialize = function(data) {
     if(!data) return false;
 
     var self = this;
