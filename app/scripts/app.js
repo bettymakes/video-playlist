@@ -2,12 +2,15 @@
 var app = app || {};
 (function($) {
 
+    var _events = {};
+    _events = _.extend(_events, Backbone.Events);
+
     app.App = function(){
         this.url = "../data/playlist.json";
         this.$video = $('#video-container');
         this.$playlist = $('#playlist');
 
-        this.event = $({});
+        this.event = _events;
 
         this.data = false;
 
