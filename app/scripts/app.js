@@ -13,8 +13,6 @@ var app = app || {};
         this.event = _events;
 
         this.data = false;
-
-        this.videoCollection = [];
         
         this.fetch = function(){
             var self = this;
@@ -22,8 +20,7 @@ var app = app || {};
             $.ajax({
                 url: self.url,
                 success: function(data) {
-                    self.data = data.videos;
-                    self.event.trigger('success');
+                    self.event.trigger('success', data);
                 }
             })
         };
@@ -37,7 +34,7 @@ var app = app || {};
         };
 
 
-        this.renderVideo = function(video){
+        this.renderVideoPlayer = function(video){
             var self = this,
                 video = video.data.video,
                 template = _.template($('#player-template').html()),
@@ -57,15 +54,20 @@ var app = app || {};
             self.$playlist.append(video.el);
         };
 
+        this.createPlaylist = function(data) {
+            var playlist = new app.Playlist(data);
+
+            this.playlist = playlist;
+        };
+
         this.initialize = function() {
             var self = this;
             this.fetch();
 
-            this.event.on('success', function() {
-                // On success, render video and playlist
-                self.appendVideoItem();
-                self.renderVideo(self.videoCollection[0]);
-           
+            this.event.on('success', function(event, data) {
+                // On success, create playlist and render videoplayer
+                self.createPlaylist(data);
+                self.renderVideoPlayer(self.playlist.videoCollection[0]);
             });
 
             this.event.on('video:added', function(event, data) {
@@ -73,12 +75,7 @@ var app = app || {};
             });
 
             this.event.on('player:loadVideo', function(event, video) {
-                self.renderVideo(video);
-            });
-
-            this.event.on('playlist:selectVideo', function(event, video) {
-                console.log('video selected', video.el);
-                video.el.addClass('active');
+                self.renderVideoPlayer(video);
             });
 
         };

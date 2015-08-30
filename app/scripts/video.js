@@ -27,10 +27,6 @@ app.Video = function(data) {
     });
   };
 
-  this.selectVideo = function() {
-
-  };
-
   this.initialize = function(data) {
     if(!data) return false;
 
